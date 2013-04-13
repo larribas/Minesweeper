@@ -1,0 +1,79 @@
+<!DOCTYPE HTML>
+<html>
+<head>
+<meta charset="UTF-8">
+	<title>Minesweeper</title>
+    
+  <link rel="stylesheet" href="minesweeper.css">
+  
+  <script type="text/javascript" src="minesweeper.js"></script>
+</head>
+
+<body>
+
+
+<div id="container">
+	<!-- Buttons are styled as divs but interacted through anchors -->
+    <a onClick="showModal('info');" href="#"><div id="flags_left" class="button">10 flags left</div></a>
+    <a onClick="document.getElementById('countup').innerHTML = '00:00'; settings('restart');" href="#"><div id="countup" class="button">00:00</div></a>
+    <a onClick="showModal('settings');" href="#"><div id="settings" class="button">Settings</div></a>
+    
+<canvas id="minesweeper" width="100" height="100"></canvas>
+
+</div>
+
+<!-- Pseudo-offpage elements -->
+  
+  <!-- Semi-transparent black 'background' -->
+    <div id="blackBG"></div>
+ 
+  <!-- Close button -->
+    <a href="#" onClick="closeModal()"><div id="closeI"></div></a>
+
+  <!-- Info panel -->
+    <div id="info">
+      <h1>Currently:</h1>
+      <p id="playing"></p>
+      
+      <h1>How to play:</h1>
+      <p>This game consists of a field with a number of mines buried randomly. As a bomb disposal expert, your work is to deactivate them. To do so, you have to flag the mined squares (right-clicking them), being careful to make the right choice -since you only have as many flags as there are bombs. The other squares indicate the number of mines they are surrounded by (up to 8).</p>
+      
+      <p id="cr">Created by Lorenzo Arribas, 22/08/2011</p>
+      
+    </div>
+
+  <!-- Settings panel -->
+    <div id="settingsDiv">
+    
+      <div><a onClick="settings('default');" href="#"><div class="button">Default</div></a></div>
+      <hr>
+      
+      <form name="fSettings">
+      
+      <table>
+        <tr><td>Grid measures:</td>
+            <td><input name="fGrid" type="range" min="5" max="25" value="10" step="1" onChange="fG();"></td>
+            <td><span id="show_fGrid">10x10</span></td></tr>
+    
+        <tr><td>Number of mines:</td>
+            <td><input name="fMines" type="number" min="1" max="34" value="10" step="1" onClick="fM();" onChange="fM();"></td>
+            <td><span id="show_fMines">10</span></td></tr>
+        
+        <tr><td>Size of a square:</td>
+            <td colspan="2"><select name="fSquare" size="1">
+                  <option value="30">Small</option>
+                  <option value="45">Medium</option>
+                  <option value="60" selected>Big</option>
+                </select></td></tr>
+      </table>
+      
+      
+      <div><a onClick="fM(); settings('custom');" href="#"><div class="button">Play</div></a></div>
+      
+      </form>
+    
+    </div>
+  
+
+</body>
+</html>
