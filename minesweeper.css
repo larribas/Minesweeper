@@ -1,0 +1,132 @@
+@charset "UTF-8";
+/* minesweeper */
+	
+	body { /* General features */
+		font-family: "Lucida Sans Unicode", "Lucida Grande", sans-serif;
+		font-size:16px;
+	}
+	
+	#container div { /* Top UI buttons positioning and layout */			
+		position:relative;
+		top:15px; left:7px;
+		float:left;
+		height:20px;		
+		
+	}
+			
+	#minesweeper { /* canvas positioning */
+		position:absolute;
+		top:70px; left:15px;		
+	}
+	
+	.button { /* button styling */
+		background-image: -webkit-gradient(linear, 0% 0%, 0% 100%,  from(#F9F9F9), to(#E3E3E3), color-stop(.5,#EEEEEE));
+		background-image: -moz-linear-gradient(0% 0% 270deg,#F9F9F9, #EEEEEE, #E3E3E3 100%);
+			
+		border:1px solid #999; border-radius:5px;					
+		padding:10px 15px;		
+		overflow:hidden;
+		
+	}
+	
+	.button:hover { /* onmouseover button styling */		
+		background-image: -webkit-gradient(linear, 0% 0%, 0% 100%,  from(#82a1ce), to(#5175b3), color-stop(.5,#6a8bc1));
+		background-image: -moz-linear-gradient(0% 0% 270deg,#82a1ce, #6a8bc1, #5175b3 100%);
+		color:#FFFFFF;		
+	}
+	
+	
+	#flags_left { /* left button */
+		text-align:left;
+	}
+	
+	#countup { /* center button */
+		text-align:center;			
+	}
+			
+	#settings { /* right button */
+		text-align:right;
+	}
+	
+	a { /* Avoid the ugly anchor styling standard */
+		color:#000;
+		text-decoration:none;
+	}
+			
+	#blackBG { /* Semi-opaque black background */
+		opacity:0.3;
+		background-color:#333;		
+		position:absolute;
+		display:none;		
+		z-index:-1;		
+		top:0px; left:0px;
+	}
+	
+	#closeI {	/* Close icon */	
+		background-image: url(close.png);
+		width:40px; height:42px;
+		position:absolute;		
+		display:none;	
+		z-index:-1;		
+	}
+		
+	#info {	/* Info panel */
+		position:absolute;
+		opacity:1;
+		display:none;
+		top:90px; left:35px;		
+		z-index:-1;		
+		background-color:#EDEDED;
+		text-align:justify;		
+		padding:30px;		
+		border:5px solid #666;		
+		overflow:hidden;
+	}
+	
+	#info h1 { /* Info panel children styling (headers) */
+		font-style:italic;
+		font-size:18px;
+		font-weight:normal;		
+		margin:0;
+		padding:0;		
+	}
+	
+	#info p { /* Info panel children styling (paragraphs) */
+		text-indent:20px;
+		padding:0;
+		margin:0 auto 25px auto;
+	}
+	
+	#cr { /* 'created by' element */
+		text-align:right;
+		font-style:italic;
+	}
+		
+	#settingsDiv { /* Settings panel */
+		background-color:#EDEDED;		
+		opacity:1;
+		padding:30px;		
+		top:90px; left:35px;		
+		border:5px solid #666;		
+		position:absolute;
+		display:none;		
+		z-index:-1;		
+		overflow:auto;			
+	}
+	
+	#settingsDiv div { /* Settings panel children styling (buttons) */
+		width:100px; height:20px;
+		text-align:center;	
+		margin-top:20px;
+		margin-bottom:60px;		
+	}
+			
+	#settingsDiv table { /* Settings panel children styling (table) */
+		margin-top:30px;
+		width:100%;
+	}
+	
+	#settingsDiv table tr td { /* Settings panel children styling (table cells) */
+		padding:10px 0;		
+		min-width:50px;
+	}
