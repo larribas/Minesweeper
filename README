@@ -1,0 +1,5 @@
+"Minesweeper is a single-player video game. The object of the game is to clear an abstract minefield without detonating a mine." —Wikipedia
+
+
+This is a version of the game Minesweeper, intended to be played in web browsers.
+Currently, it supports all the major browsers except for IE.
